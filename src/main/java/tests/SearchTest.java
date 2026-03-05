@@ -1,4 +1,4 @@
-package com.example.tests;
+package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,8 +14,8 @@ public class SearchTest extends BaseTest {
     @DataProvider(name = "checkboxStates")
     public Object[][] checkboxStates() {
         return new Object[][]{
-                {0, true},   // first checkbox -> check it
-                {1, false}   // second checkbox -> uncheck it
+                {0, true},
+                {1, false}
         };
     }
 

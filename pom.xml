@@ -6,8 +6,14 @@
 
     <groupId>com.example</groupId>
     <artifactId>selenium-starter-kit</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <parent>
+        <groupId>pl.b2b.net.testfactory</groupId>
+        <artifactId>testNgParent</artifactId>
+        <version>2.0-SNAPSHOT</version>
+    </parent>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -15,10 +21,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>4.29.0</selenium.version>
         <testng.version>7.11.0</testng.version>
-        <webdrivermanager.version>5.9.3</webdrivermanager.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -26,17 +47,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-            <scope>test</scope>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
         </dependency>
     </dependencies>
 
