@@ -33,7 +33,7 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-    @TestFactoryMethod(value = "testLinksPresent", group = "hk")
+    @TestFactoryMethod(value = "testLinksPresent", group = "hk4")
     @Test(groups = {"hk"})
     @Parameters({"baseUrl"})
     public void testLinksPresent(@Optional("https://the-internet.herokuapp.com/") String baseUrl) {
