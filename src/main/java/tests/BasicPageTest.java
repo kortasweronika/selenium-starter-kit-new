@@ -40,6 +40,7 @@ public class BasicPageTest extends BaseTest {
         Assert.assertTrue(links.size() > 10, "Main page should have many example links");
     }
 
+    @TestFactoryMethod(value = "testStatusCodes", group = "hk")
     @Test(groups = {"hk"})
     public void testStatusCodes() {
         driver.get("https://the-internet.herokuapp.com/status_codes");
