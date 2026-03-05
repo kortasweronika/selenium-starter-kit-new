@@ -1,0 +1,50 @@
+package tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import java.util.List;
+
+public class BasicPageTest extends BaseTest {
+
+    @DataProvider(name = "pages")
+    public Object[][] pages() {
+        return new Object[][]{
+                {"https://the-internet.herokuapp.com/", "Welcome to the-internet"},
+                {"https://the-internet.herokuapp.com/login", "Login Page"},
+                {"https://the-internet.herokuapp.com/dropdown", "Dropdown List"}
+        };
+    }
+
+    @Test(groups = {"podstawowa"}, dataProvider = "pages")
+    public void testPageTitle(String url, String expectedHeading) {
+        driver.get(url);
+
+        WebElement heading = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h1")));
+        Assert.assertTrue(heading.getText().contains(expectedHeading),
+                "Page heading should contain: " + expectedHeading);
+    }
+
+    @Test(groups = {"podstawowa"})
+    public void testLinksPresent() {
+        driver.get("https://the-internet.herokuapp.com/");
+
+        List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
+        Assert.assertTrue(links.size() > 10, "Main page should have many example links");
+    }
+
+    @Test(groups = {"podstawowa"})
+    public void testStatusCodes() {
+        driver.get("https://the-internet.herokuapp.com/status_codes");
+
+        WebElement header = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h3")));
+        Assert.assertEquals(header.getText(), "Status Codes");
+
+        List<WebElement> codeLinks = driver.findElements(By.cssSelector("a[href*='status_codes/']"));
+        Assert.assertEquals(codeLinks.size(), 4, "Should have 4 status code links");
+    }
+}
