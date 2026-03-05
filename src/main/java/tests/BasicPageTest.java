@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pl.b2b.testfactory.annotations.TestFactoryMethod;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class BasicPageTest extends BaseTest {
         };
     }
 
+    @TestFactoryMethod(value = "testPageTitle", group = "hk")
     @Test(groups = {"hk"}, dataProvider = "pages")
     public void testPageTitle(String url, String expectedHeading) {
         driver.get(url);
@@ -29,6 +31,7 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
+    @TestFactoryMethod(value = "testLinksPresent", group = "hk")
     @Test(groups = {"hk"})
     public void testLinksPresent() {
         driver.get("https://the-internet.herokuapp.com/");
