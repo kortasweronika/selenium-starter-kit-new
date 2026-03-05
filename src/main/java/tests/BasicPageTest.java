@@ -42,6 +42,7 @@ public class BasicPageTest extends BaseTest {
 //        Assert.assertTrue(links.size() > 10, "Main page should have many example links");
 //    }
 
+    @Test(groups = {"hk5"})
     @TestFactoryMethod(value = "testLinksPresent", group = "hk5")
     @Parameters({"baseUrl"})
     public void testLinksPresent(@Optional String baseUrl) {
