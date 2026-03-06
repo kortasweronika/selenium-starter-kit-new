@@ -24,7 +24,7 @@ public class BasicPageTest extends BaseTest {
     }
 
     @TestFactoryMethod(value = "testPageTitle", group = "zmiana")
-    @Test(groups = {"hk"}, dataProvider = "pages")
+    @Test(groups = {"hk8734"}, dataProvider = "pages")
     @Parameters({"url", "expectedHeading", "expectedText"})
     public void testPageTitle(String url, String expectedHeading, String expectedText) {
         driver.get(url);
