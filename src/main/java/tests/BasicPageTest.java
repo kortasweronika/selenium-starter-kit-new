@@ -23,7 +23,7 @@ public class BasicPageTest extends BaseTest {
         };
     }
 
-    @TestFactoryMethod(value = "testPageTitle", group = "zmiana")
+    @TestFactoryMethod(value = "testPageTitle", group = "zmiana89842")
     @Test(groups = {"hk8734"}, dataProvider = "pages")
     @Parameters({"url", "expectedHeading", "expectedText"})
     public void testPageTitle(String url, String expectedHeading, String expectedText) {
