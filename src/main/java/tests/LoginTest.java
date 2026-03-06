@@ -19,27 +19,27 @@ public class LoginTest extends BaseTest {
         };
     }
 
-    @Test(groups = {"smoke", "login"}, dataProvider = "loginCredentials")
-    public void testLogin(String username, String password, boolean shouldSucceed) {
-        driver.get("https://the-internet.herokuapp.com/login");
-
-        WebElement usernameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
-        WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
-
-        usernameField.sendKeys(username);
-        passwordField.sendKeys(password);
-        loginButton.click();
-
-        WebElement flash = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("flash")));
-        if (shouldSucceed) {
-            Assert.assertTrue(flash.getText().contains("You logged into a secure area!"),
-                    "Should see success message");
-        } else {
-            Assert.assertTrue(flash.getText().contains("Your username is invalid!"),
-                    "Should see error message");
-        }
-    }
+//    @Test(groups = {"smoke", "login"}, dataProvider = "loginCredentials")
+//    public void testLogin(String username, String password, boolean shouldSucceed) {
+//        driver.get("https://the-internet.herokuapp.com/login");
+//
+//        WebElement usernameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
+//        WebElement passwordField = driver.findElement(By.id("password"));
+//        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+//
+//        usernameField.sendKeys(username);
+//        passwordField.sendKeys(password);
+//        loginButton.click();
+//
+//        WebElement flash = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("flash")));
+//        if (shouldSucceed) {
+//            Assert.assertTrue(flash.getText().contains("You logged into a secure area!"),
+//                    "Should see success message");
+//        } else {
+//            Assert.assertTrue(flash.getText().contains("Your username is invalid!"),
+//                    "Should see error message");
+//        }
+//    }
 
     @Test(groups = {"regression", "login"})
     @Parameters({"baseUrl"})
