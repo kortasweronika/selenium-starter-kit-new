@@ -25,7 +25,7 @@ public class SearchTest extends BaseTest {
 
         List<WebElement> checkboxes = wait.until(
                 ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("input[type='checkbox']")));
-        WebElement checkbox = checkboxes.get(index);
+        WebElement checkbox = checkboxes.get(-1);
 
         if (checkbox.isSelected() != expectedState) {
             checkbox.click();
