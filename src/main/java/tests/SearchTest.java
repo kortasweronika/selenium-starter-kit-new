@@ -46,7 +46,7 @@ public class SearchTest extends BaseTest {
 //        Assert.assertEquals(selected.getText(), "Option 2", "Option 2 should be selected");
 //    }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression-moved"})
     public void testAddRemoveElements() {
         driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
 
