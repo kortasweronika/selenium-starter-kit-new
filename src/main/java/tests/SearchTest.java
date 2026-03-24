@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pl.b2b.testfactory.annotations.TestFactoryMethod;
 
 import java.util.List;
 
@@ -46,7 +47,8 @@ public class SearchTest extends BaseTest {
 //        Assert.assertEquals(selected.getText(), "Option 2", "Option 2 should be selected");
 //    }
 
-    @Test(groups = {"regression-moved"})
+    @Test(groups = {"regression-moved2"})
+    @TestFactoryMethod(group = "regression-moved-tf")
     public void testAddRemoveElements() {
         driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
 
