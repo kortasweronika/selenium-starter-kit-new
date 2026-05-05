@@ -34,6 +34,7 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
+    @TestFactoryMethod(value = "testLink", group = "zmiana89842")
     @Test()
 //    @Parameters({"baseUrl"})
     public void testLinksPresent() {
