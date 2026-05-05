@@ -43,26 +43,4 @@ public class BasicPageTest extends BaseTest {
         List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
         Assert.assertTrue(links.size() > 10, "Main page should have many example links");
     }
-
-//    @Test(groups = {"hk5"})
-//    @TestFactoryMethod(value = "testLinksPresent", group = "hk5")
-//    @Parameters({"baseUrl", "thx"})
-//    public void testLinksPresent(@Optional String baseUrl, @Optional String thx) {
-//        driver.get(baseUrl);
-//
-//        List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
-//        Assert.assertTrue(links.size() > 10, "Main page should have many example links");
-//    }
-
-//    @TestFactoryMethod(value = "testStatusCodes", group = "hk")
-//    @Test(groups = {"hk"})
-//    public void testStatusCodes() {
-//        driver.get("https://the-internet.herokuapp.com/status_codes");
-//
-//        WebElement header = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h3")));
-//        Assert.assertEquals(header.getText(), "Status Codes");
-//
-//        List<WebElement> codeLinks = driver.findElements(By.cssSelector("a[href*='status_codes/']"));
-//        Assert.assertEquals(codeLinks.size(), 4, "Should have 4 status code links");
-//    }
 }
