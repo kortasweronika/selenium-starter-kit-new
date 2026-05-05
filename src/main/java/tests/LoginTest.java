@@ -41,7 +41,7 @@ public class LoginTest extends BaseTest {
         }
     }
 
-    @Test(groups = {"regression34", "login"})
+    @Test(groups = {"regression34", "login","regression-moved-tf"})
     @Parameters({"baseUrl", "newparam"})
     public void testLoginPageElements(@Optional("https://the-internet.herokuapp.com") String baseUrl, String newparam) {
         driver.get(baseUrl + "/login");
